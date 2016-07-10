@@ -16,8 +16,8 @@ def all_odd(numbers):
         >>> all_odd([2, -6, 8])
         []
     """
-    odd_nums = []
-    [odd_nums.append(num) for num in numbers if num % 2 != 0]
+    odd_nums = []  # creating empty list
+    [odd_nums.append(num) for num in numbers if num % 2 != 0]  # calculating to see if number in list is odd, and appending it back to odd_nums list
 
     return odd_nums
 
@@ -40,8 +40,8 @@ def print_indices(items):
         1 Jeep
         2 Volvo
     """
-    for i in items:
-        index = items.index(i)
+    for i in items:  # searches through each element in list
+        index = items.index(i)  # finds the index
         print index, i
 
 
@@ -75,10 +75,10 @@ def foods_in_common(foods1, foods2):
 
     duplicate = []
 
-    for i in foods1:
-        if i in foods2:
+    for i in foods1:  # checks element in list
+        if i in foods2:  # checks to see if the element is in the second list. If so, append.
             duplicate.append(i)
-    duplicate.sort()
+    duplicate.sort()  # sorting in ABC order
     return duplicate
 
 
@@ -95,7 +95,7 @@ def every_other_item(items):
        ... )
        ['you', 'are', 'good', 'at', 'code']
     """
-    return items[::2]
+    return items[::2]  # returning every other item with slice/skipping through the list
 
 
 def largest_n_items(items, n):
@@ -123,7 +123,7 @@ def largest_n_items(items, n):
         return []
 
     collection = sorted(items)  # list sorted ascending
-    decending_collection = collection[::-1]  # reverse list
+    decending_collection = collection[::-1]  # reverse list to make decending
     n_numbers = decending_collection[:n]  # taking the first 'n' numbers of elements
     acending_n_numbers = n_numbers[::-1]  # reverting the list again to produce ascending numbers
 
