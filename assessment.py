@@ -95,8 +95,7 @@ def every_other_item(items):
        ... )
        ['you', 'are', 'good', 'at', 'code']
     """
-
-    return ['the wrong thing']
+    return items[::2]
 
 
 def largest_n_items(items, n):
@@ -120,8 +119,15 @@ def largest_n_items(items, n):
         >>> largest_n_items([3, 3, 3, 2, 1], 2)
         [3, 3]
     """
+    if n == 0:
+        return []
 
-    return []
+    collection = sorted(items)  # list sorted ascending
+    decending_collection = collection[::-1]  # reverse list
+    n_numbers = decending_collection[:n]  # taking the first 'n' numbers of elements
+    acending_n_numbers = n_numbers[::-1]  # reverting the list again to produce ascending numbers
+
+    return acending_n_numbers
 
 
 #####################################################################
